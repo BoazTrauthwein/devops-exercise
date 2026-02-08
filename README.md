@@ -1,4 +1,4 @@
-# Checkmarx DevOps Exercise
+# DevOps Exercise
 
 A complete local Kubernetes environment running Jenkins CI/CD, PostgreSQL database, and Grafana monitoring.
 
@@ -20,3 +20,4 @@ A complete local Kubernetes environment running Jenkins CI/CD, PostgreSQL databa
 - Prometheus + Grafana monitoring
 - Traefik ingress (no port-forwarding)
 
+See [docs/IMPLEMENTATION.md](docs/IMPLEMENTATION.md) for detailed guide.
