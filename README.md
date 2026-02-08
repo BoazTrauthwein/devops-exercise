@@ -20,4 +20,14 @@ A complete local Kubernetes environment running Jenkins CI/CD, PostgreSQL databa
 - Prometheus + Grafana monitoring
 - Traefik ingress (no port-forwarding)
 
+## 📊 Screenshots
+
+### Grafana Dashboard - Live PostgreSQL Metrics
+![Grafana Dashboard](docs/screenshots/grafana-dashboard.png)
+*Real-time monitoring showing database connections, timestamp records, database size, and transactions per second*
+
+### Jenkins Pipeline Execution
+![Jenkins Builds](docs/screenshots/jenkins-builds.png)
+*Automated job running every 5 minutes with dynamic Kubernetes worker pods*
+
 See [docs/IMPLEMENTATION.md](docs/IMPLEMENTATION.md) for detailed guide.
