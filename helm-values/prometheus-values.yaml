@@ -1,0 +1,21 @@
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelectorNilUsesHelmValues: false
+    
+    additionalScrapeConfigs:
+      - job_name: 'postgres-exporter'
+        static_configs:
+          - targets: ['postgres-exporter.database.svc.cluster.local:9187']
+
+grafana:
+  enabled: false
+
+alertmanager:
+  enabled: false
+
+nodeExporter:
+  enabled: false
+
+kubeStateMetrics:
+  enabled: false

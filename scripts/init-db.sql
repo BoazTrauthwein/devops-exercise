@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS timestamps (
+  id SERIAL PRIMARY KEY,
+  recorded_at TIMESTAMP DEFAULT NOW(),
+  worker_pod VARCHAR(255)
+);

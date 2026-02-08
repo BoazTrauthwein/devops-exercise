@@ -1,0 +1,19 @@
+adminUser: admin
+adminPassword: admin123
+
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    - name: Prometheus
+      type: prometheus
+      url: http://prometheus-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090
+      access: proxy
+      isDefault: true
+
+service:
+  type: ClusterIP
+  port: 80
+
+persistence:
+  enabled: false

@@ -1,0 +1,24 @@
+auth:
+  enablePostgresUser: true
+  username: postgres
+  database: postgres
+  existingSecret: postgres-credentials
+
+primary:
+  persistence:
+    enabled: true
+    size: 5Gi
+  
+  initdb:
+    scripts:
+      init.sql: |
+        CREATE TABLE IF NOT EXISTS timestamps (
+          id SERIAL PRIMARY KEY,
+          recorded_at TIMESTAMP DEFAULT NOW(),
+          worker_pod VARCHAR(255)
+        );
+
+  service:
+    type: ClusterIP
+    ports:
+      postgresql: 5432
