@@ -154,7 +154,10 @@ install() {
     # Step 8: Deploy Terraform runner and provision Grafana dashboard
     log_info "Provisioning Grafana dashboard with Terraform..."
     kubectl apply -f k8s/terraform-runner.yaml
-    wait_for_pod "monitoring" "metadata.name=terraform-runner" 120
+    kubectl wait --for=condition=ready pod/terraform-runner -n monitoring --timeout=120s || {
+    log_error "Terraform runner pod not ready"
+    return 1
+    }
     
     # Copy Terraform files
     kubectl cp terraform/main.tf monitoring/terraform-runner:/workspace/main.tf
